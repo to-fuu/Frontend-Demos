@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
+import Head from "next/head";
 
 export default function Home() {
   const [mouseX, setMouseX] = useState(0)
@@ -66,7 +67,9 @@ export default function Home() {
 
 
   return <main className="min-h-screen  text-[#dfd3c3] overflow-x-clip font-Zen relative">
-
+    <Head>
+      <title>GSAP Demo1</title>
+    </Head>
     <div className="relative z-10 pb-32 bg-neutral-900">
       <div className="relative ">
         <div className="font-Demo1 text-[12vw] whitespace-nowrap text-[#dfd3c3] uppercase leading-none sticky top-0 min-h-[80vh] py-[10%] pointer-events-none">
@@ -81,7 +84,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="max-w-screen-xl px-20 pt-48 mx-auto  3xl:max-w-screen-2xl">
+      <div className="max-w-screen-xl px-20 pt-48 mx-auto 3xl:max-w-screen-2xl">
         <h2 className="text-4xl 3xl:text-5xl">Hi I&apos;m Ala. I&apos;m a front-end developer from Sousse, Tunisia.</h2>
         <div className="max-w-xl mt-20 ml-auto ">
           <p className="text-xl font-light leading-relaxed 3xl:text-3xl">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia fuga velit repellat? Laboriosam sed, autem quae rerum commodi voluptate ab dolorem ipsum, aperiam consequuntur blanditiis, debitis deserunt quas. Alias vero velit consequatur?</p>
@@ -130,7 +133,7 @@ export default function Home() {
           </SwiperSlide>
         </Swiper>
       </div>
-      <div className="grid max-w-screen-xl grid-cols-2 gap-8 px-20 mx-auto  pt-96">
+      <div className="grid max-w-screen-xl grid-cols-2 gap-8 px-20 mx-auto pt-96">
         <h2 className="text-4xl 3xl:text-5xl">Frontend Expertise</h2>
         <div className="">
           <div className="flex flex-col uppercase divide-y 3xl:text-2xl">
@@ -149,7 +152,7 @@ export default function Home() {
           </a>
         </div>
       </div>
-      <div className="grid max-w-screen-xl grid-cols-2 gap-8 px-20 mx-auto  pt-96">
+      <div className="grid max-w-screen-xl grid-cols-2 gap-8 px-20 mx-auto pt-96">
         <h2 className="text-4xl 3xl:text-5xl">Game Dev Expertise</h2>
         <div className="">
           <div className="flex flex-col uppercase divide-y 3xl:text-2xl">
