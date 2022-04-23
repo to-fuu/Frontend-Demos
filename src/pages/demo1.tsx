@@ -67,23 +67,23 @@ export default function Home() {
 
   return <main className="min-h-screen  text-[#dfd3c3] overflow-x-clip font-Zen relative">
 
-    <div className="bg-neutral-900  pb-32 relative z-10">
-      <div className="relative  ">
+    <div className="relative z-10 pb-32 bg-neutral-900">
+      <div className="relative ">
         <div className="font-Demo1 text-[12vw] whitespace-nowrap text-[#dfd3c3] uppercase leading-none sticky top-0 min-h-[80vh] py-[10%] pointer-events-none">
           <h1>Experience Designer – Experience Designer</h1>
           <h1 className="-translate-x-20">Experience Designer – Experience Designer</h1>
         </div>
-        <div className=" ">
+        <div className="">
           <div className="relative h-[70vw] w-[65vw] mx-auto bg-[#e1ff00]">
-            <img src="/Demo1/tokyo.jpg" className="w-full h-full object-cover" alt="" />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-neutral-900 via-transparent pointer-events-none"></div>
-            <div className="right-0 bottom-0 absolute translate-x-1/2 translate-y-1/2 w-40 h-40 3xl:w-64 3xl:h-64"><img src="/Demo1/circletext.svg" className=" absolute w-full h-full" data-rotate data-speed="-1" alt="" /></div>
+            <img src="/Demo1/tokyo.jpg" className="object-cover w-full h-full" alt="" />
+            <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent to-neutral-900 via-transparent"></div>
+            <div className="absolute bottom-0 right-0 w-40 h-40 translate-x-1/2 translate-y-1/2 3xl:w-64 3xl:h-64"><img src="/Demo1/circletext.svg" className="absolute w-full h-full " data-rotate data-speed="-1" alt="" /></div>
           </div>
         </div>
       </div>
-      <div className=" max-w-screen-xl 3xl:max-w-screen-2xl mx-auto px-20 pt-48">
-        <h2 className="text-4xl 3xl:text-5xl">Hi I'm Ala. I'm a front-end developer from Sousse, Tunisia.</h2>
-        <div className=" ml-auto max-w-xl mt-20">
+      <div className="max-w-screen-xl px-20 pt-48 mx-auto  3xl:max-w-screen-2xl">
+        <h2 className="text-4xl 3xl:text-5xl">Hi I&apos;m Ala. I&apos;m a front-end developer from Sousse, Tunisia.</h2>
+        <div className="max-w-xl mt-20 ml-auto ">
           <p className="text-xl font-light leading-relaxed 3xl:text-3xl">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia fuga velit repellat? Laboriosam sed, autem quae rerum commodi voluptate ab dolorem ipsum, aperiam consequuntur blanditiis, debitis deserunt quas. Alias vero velit consequatur?</p>
           <a href="" className="link">Get to know me
             <svg width="37" height="17" viewBox="0 0 37 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -92,13 +92,13 @@ export default function Home() {
           </a>
         </div>
       </div>
-      <div className="pt-64 text-white mt-64 px-20 featured">
+      <div className="px-20 pt-64 mt-64 text-white featured">
         <h2 data-scroll data-speed='0.25' className="w-fit font-Demo1 mx-auto text-[7vw]">FEATURED</h2>
-        <Swiper className="px-32 demo1-slider -mt-32" slidesPerView={2} spaceBetween={20} >
+        <Swiper className="px-32 -mt-32 demo1-slider" slidesPerView={2} spaceBetween={20} >
           <SwiperSlide >
-            <div className="w-full aspect-video relative overflow-hidden">
-              <img src="/Demo1/P1.png" className="w-full duration-500 hover:scale-110 absolute" alt="Project1" />
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-neutral-900 via-transparent pointer-events-none"></div>
+            <div className="relative w-full overflow-hidden aspect-video">
+              <img src="/Demo1/P1.png" className="absolute w-full duration-500 hover:scale-110" alt="Project1" />
+              <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent to-neutral-900 via-transparent"></div>
             </div>
             <a href="" className="link">Project name
               <svg width="37" height="17" viewBox="0 0 37 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -107,9 +107,9 @@ export default function Home() {
             </a>
           </SwiperSlide>
           <SwiperSlide >
-            <div className="w-full aspect-video relative overflow-hidden">
-              <img src="/Demo1/P1.png" className="w-full duration-500 hover:scale-110 absolute" alt="Project1" />
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-neutral-900 via-transparent pointer-events-none"></div>
+            <div className="relative w-full overflow-hidden aspect-video">
+              <img src="/Demo1/P1.png" className="absolute w-full duration-500 hover:scale-110" alt="Project1" />
+              <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent to-neutral-900 via-transparent"></div>
             </div>
             <a href="" className="link">Project name
               <svg width="37" height="17" viewBox="0 0 37 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -118,9 +118,9 @@ export default function Home() {
             </a>
           </SwiperSlide>
           <SwiperSlide >
-            <div className="w-full aspect-video relative overflow-hidden">
-              <img src="/Demo1/P1.png" className="w-full duration-500 hover:scale-110 absolute" alt="Project1" />
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-neutral-900 via-transparent pointer-events-none"></div>
+            <div className="relative w-full overflow-hidden aspect-video">
+              <img src="/Demo1/P1.png" className="absolute w-full duration-500 hover:scale-110" alt="Project1" />
+              <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent to-neutral-900 via-transparent"></div>
             </div>
             <a href="" className="link">Project name
               <svg width="37" height="17" viewBox="0 0 37 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -130,10 +130,10 @@ export default function Home() {
           </SwiperSlide>
         </Swiper>
       </div>
-      <div className=" grid grid-cols-2 max-w-screen-xl mx-auto px-20 pt-96 gap-8">
+      <div className="grid max-w-screen-xl grid-cols-2 gap-8 px-20 mx-auto  pt-96">
         <h2 className="text-4xl 3xl:text-5xl">Frontend Expertise</h2>
         <div className="">
-          <div className="flex flex-col divide-y uppercase 3xl:text-2xl">
+          <div className="flex flex-col uppercase divide-y 3xl:text-2xl">
             <div className=""></div>
             <span className="py-8">UI Design</span>
             <span className="py-8">React</span>
@@ -149,10 +149,10 @@ export default function Home() {
           </a>
         </div>
       </div>
-      <div className=" grid grid-cols-2 max-w-screen-xl mx-auto px-20 pt-96 gap-8">
+      <div className="grid max-w-screen-xl grid-cols-2 gap-8 px-20 mx-auto  pt-96">
         <h2 className="text-4xl 3xl:text-5xl">Game Dev Expertise</h2>
         <div className="">
-          <div className="flex flex-col divide-y uppercase 3xl:text-2xl">
+          <div className="flex flex-col uppercase divide-y 3xl:text-2xl">
 
             <div className=""></div>
             <span className="py-8">Unity3D</span>
@@ -198,23 +198,23 @@ export default function Home() {
         </svg>
       </a>
 
-      <div className="flex bottom-0 py-14 w-full px-20 absolute">
+      <div className="absolute bottom-0 flex w-full px-20 py-14">
         <div className="opacity-75">
           &copy; Ala Chebbi 2022
         </div>
-        <div className="ml-auto flex gap-2">
+        <div className="flex gap-2 ml-auto">
           <a href="" className="w-[50px] border-[#3b3b3b] h-[50px] border rounded-full grid place-items-center text-lg hover:bg-[#3b3b3b] duration-300"><FaLinkedinIn /></a>
           <a href="" className="w-[50px] border-[#3b3b3b] h-[50px] border rounded-full grid place-items-center text-lg hover:bg-[#3b3b3b] duration-300"><FaGithub /></a>
         </div>
       </div>
 
-      <div className="flex top-20 py-14 w-full px-20 absolute">
+      <div className="absolute flex w-full px-20 top-20 py-14">
         <div className="flex gap-6">
-          <a href="" className="ml-auto  text-white/95 hover:text-white/75 duration-300 font-medium">Home</a>
-          <a href="" className="ml-auto  text-white/95 hover:text-white/75 duration-300 font-medium">Work</a>
-          <a href="" className="ml-auto  text-white/95 hover:text-white/75 duration-300 font-medium">About</a>
+          <a href="" className="ml-auto font-medium duration-300 text-white/95 hover:text-white/75">Home</a>
+          <a href="" className="ml-auto font-medium duration-300 text-white/95 hover:text-white/75">Work</a>
+          <a href="" className="ml-auto font-medium duration-300 text-white/95 hover:text-white/75">About</a>
         </div>
-        <a href="" className="ml-auto border-b pb-2 text-white/95 hover:text-white/75 duration-300 font-medium">Send me an email</a>
+        <a href="" className="pb-2 ml-auto font-medium duration-300 border-b text-white/95 hover:text-white/75">Send me an email</a>
       </div>
     </div>
 
