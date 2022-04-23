@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+  font-family: 'Demo1';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/Demo1/demo1.woff') format('woff');
+}
+
+
+.hscroll span{
+  @apply -translate-x-full
+}
+
+.link{
+  @apply flex items-center gap-4 text-[#e1ff00] mt-8 duration-1000 hover:gap-8 text-base font-medium 3xl:text-2xl
+}

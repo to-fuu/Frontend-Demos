@@ -1,0 +1,229 @@
+import gsap from "gsap"
+import { useEffect, useState } from "react"
+import ScrollTrigger from 'gsap/dist/ScrollTrigger'
+import { Swiper, SwiperSlide } from "swiper/react";
+import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
+
+export default function Home() {
+  const [mouseX, setMouseX] = useState(0)
+  const [mouseY, setMouseY] = useState(0)
+  useEffect(() => {
+
+    if (typeof window !== "undefined") {
+      gsap.registerPlugin(ScrollTrigger);
+    }
+
+    gsap.to("[data-scroll]", {
+      scrollTrigger: {
+        scrub: 0.5,
+        trigger: '.featured'
+
+      },
+      y: (i, target) => -ScrollTrigger.maxScroll(window) * target.dataset.speed / 10,
+      ease: "none"
+    });
+
+
+    gsap.to("[data-rotate]", {
+      scrollTrigger: {
+        scrub: 0.5,
+      },
+      rotate: (i, target) => -ScrollTrigger.maxScroll(window) * target.dataset.speed / 10,
+    });
+
+
+    gsap.to("[data-scroll-horizontal]", {
+      scrollTrigger: {
+        scrub: 0.5,
+        trigger: '.hscroll'
+      },
+      x: (i, target) => (-ScrollTrigger.maxScroll(window)) * target.dataset.speed / 10,
+    });
+
+    var posX = 0,
+      posY = 0;
+
+
+    document.addEventListener("mousemove", function (e) {
+      gsap.to('.cursor', {
+        left: e.clientX,
+        top: e.clientY
+      });
+    });
+
+
+
+
+    return () => {
+      document.removeEventListener("mousemove", function (e) {
+        gsap.to('.cursor', {
+          left: e.clientX,
+          top: e.clientY
+        });
+      });
+    }
+  }, [])
+
+
+  return <main className="min-h-screen  text-[#dfd3c3] overflow-x-clip font-Zen relative">
+
+    <div className="bg-neutral-900  pb-32 relative z-10">
+      <div className="relative  ">
+        <div className="font-Demo1 text-[12vw] whitespace-nowrap text-[#dfd3c3] uppercase leading-none sticky top-0 min-h-[80vh] py-[10%] pointer-events-none">
+          <h1>Experience Designer – Experience Designer</h1>
+          <h1 className="-translate-x-20">Experience Designer – Experience Designer</h1>
+        </div>
+        <div className=" ">
+          <div className="relative h-[70vw] w-[65vw] mx-auto bg-[#e1ff00]">
+            <img src="/Demo1/tokyo.jpg" className="w-full h-full object-cover" alt="" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-neutral-900 via-transparent pointer-events-none"></div>
+            <div className="right-0 bottom-0 absolute translate-x-1/2 translate-y-1/2 w-40 h-40 3xl:w-64 3xl:h-64"><img src="/Demo1/circletext.svg" className=" absolute w-full h-full" data-rotate data-speed="-1" alt="" /></div>
+          </div>
+        </div>
+      </div>
+      <div className=" max-w-screen-xl 3xl:max-w-screen-2xl mx-auto px-20 pt-48">
+        <h2 className="text-4xl 3xl:text-5xl">Hi I'm Ala. I'm a front-end developer from Sousse, Tunisia.</h2>
+        <div className=" ml-auto max-w-xl mt-20">
+          <p className="text-xl font-light leading-relaxed 3xl:text-3xl">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia fuga velit repellat? Laboriosam sed, autem quae rerum commodi voluptate ab dolorem ipsum, aperiam consequuntur blanditiis, debitis deserunt quas. Alias vero velit consequatur?</p>
+          <a href="" className="link">Get to know me
+            <svg width="37" height="17" viewBox="0 0 37 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fillRule="evenodd" clipRule="evenodd" d="M27.5377 1.1906L28.1347 2.63918C29.0998 4.98087 30.8573 6.86515 33.0501 8.0001L0 8.0001V9.0001L33.05 9.0001C30.8572 10.135 29.0998 12.0193 28.1347 14.361L27.5377 15.8096L28.4623 16.1906L29.0593 14.742C30.287 11.763 32.9311 9.60166 36.0948 8.99103V8.00915C32.9311 7.39852 30.287 5.23713 29.0593 2.25815L28.4623 0.80957L27.5377 1.1906Z" fill="#EBFF00"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div className="pt-64 text-white mt-64 px-20 featured">
+        <h2 data-scroll data-speed='0.25' className="w-fit font-Demo1 mx-auto text-[7vw]">FEATURED</h2>
+        <Swiper className="px-32 demo1-slider -mt-32" slidesPerView={2} spaceBetween={20} >
+          <SwiperSlide >
+            <div className="w-full aspect-video relative overflow-hidden">
+              <img src="/Demo1/P1.png" className="w-full duration-500 hover:scale-110 absolute" alt="Project1" />
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-neutral-900 via-transparent pointer-events-none"></div>
+            </div>
+            <a href="" className="link">Project name
+              <svg width="37" height="17" viewBox="0 0 37 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fillRule="evenodd" clipRule="evenodd" d="M27.5377 1.1906L28.1347 2.63918C29.0998 4.98087 30.8573 6.86515 33.0501 8.0001L0 8.0001V9.0001L33.05 9.0001C30.8572 10.135 29.0998 12.0193 28.1347 14.361L27.5377 15.8096L28.4623 16.1906L29.0593 14.742C30.287 11.763 32.9311 9.60166 36.0948 8.99103V8.00915C32.9311 7.39852 30.287 5.23713 29.0593 2.25815L28.4623 0.80957L27.5377 1.1906Z" fill="#EBFF00"></path>
+              </svg>
+            </a>
+          </SwiperSlide>
+          <SwiperSlide >
+            <div className="w-full aspect-video relative overflow-hidden">
+              <img src="/Demo1/P1.png" className="w-full duration-500 hover:scale-110 absolute" alt="Project1" />
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-neutral-900 via-transparent pointer-events-none"></div>
+            </div>
+            <a href="" className="link">Project name
+              <svg width="37" height="17" viewBox="0 0 37 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fillRule="evenodd" clipRule="evenodd" d="M27.5377 1.1906L28.1347 2.63918C29.0998 4.98087 30.8573 6.86515 33.0501 8.0001L0 8.0001V9.0001L33.05 9.0001C30.8572 10.135 29.0998 12.0193 28.1347 14.361L27.5377 15.8096L28.4623 16.1906L29.0593 14.742C30.287 11.763 32.9311 9.60166 36.0948 8.99103V8.00915C32.9311 7.39852 30.287 5.23713 29.0593 2.25815L28.4623 0.80957L27.5377 1.1906Z" fill="#EBFF00"></path>
+              </svg>
+            </a>
+          </SwiperSlide>
+          <SwiperSlide >
+            <div className="w-full aspect-video relative overflow-hidden">
+              <img src="/Demo1/P1.png" className="w-full duration-500 hover:scale-110 absolute" alt="Project1" />
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-neutral-900 via-transparent pointer-events-none"></div>
+            </div>
+            <a href="" className="link">Project name
+              <svg width="37" height="17" viewBox="0 0 37 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fillRule="evenodd" clipRule="evenodd" d="M27.5377 1.1906L28.1347 2.63918C29.0998 4.98087 30.8573 6.86515 33.0501 8.0001L0 8.0001V9.0001L33.05 9.0001C30.8572 10.135 29.0998 12.0193 28.1347 14.361L27.5377 15.8096L28.4623 16.1906L29.0593 14.742C30.287 11.763 32.9311 9.60166 36.0948 8.99103V8.00915C32.9311 7.39852 30.287 5.23713 29.0593 2.25815L28.4623 0.80957L27.5377 1.1906Z" fill="#EBFF00"></path>
+              </svg>
+            </a>
+          </SwiperSlide>
+        </Swiper>
+      </div>
+      <div className=" grid grid-cols-2 max-w-screen-xl mx-auto px-20 pt-96 gap-8">
+        <h2 className="text-4xl 3xl:text-5xl">Frontend Expertise</h2>
+        <div className="">
+          <div className="flex flex-col divide-y uppercase 3xl:text-2xl">
+            <div className=""></div>
+            <span className="py-8">UI Design</span>
+            <span className="py-8">React</span>
+            <span className="py-8">Next.js</span>
+            <span className="py-8">TailwindCss</span>
+            <span className="py-8">Responsive design</span>
+            <span className="py-8">Animations</span>
+          </div>
+          <a href="" className="link">Read about my experience
+            <svg width="37" height="17" viewBox="0 0 37 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fillRule="evenodd" clipRule="evenodd" d="M27.5377 1.1906L28.1347 2.63918C29.0998 4.98087 30.8573 6.86515 33.0501 8.0001L0 8.0001V9.0001L33.05 9.0001C30.8572 10.135 29.0998 12.0193 28.1347 14.361L27.5377 15.8096L28.4623 16.1906L29.0593 14.742C30.287 11.763 32.9311 9.60166 36.0948 8.99103V8.00915C32.9311 7.39852 30.287 5.23713 29.0593 2.25815L28.4623 0.80957L27.5377 1.1906Z" fill="#EBFF00"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div className=" grid grid-cols-2 max-w-screen-xl mx-auto px-20 pt-96 gap-8">
+        <h2 className="text-4xl 3xl:text-5xl">Game Dev Expertise</h2>
+        <div className="">
+          <div className="flex flex-col divide-y uppercase 3xl:text-2xl">
+
+            <div className=""></div>
+            <span className="py-8">Unity3D</span>
+            <span className="py-8">Animation</span>
+            <span className="py-8">Statemachine</span>
+            <span className="py-8">3D Modeling</span>
+            <span className="py-8">UI Design</span>
+            <span className="py-8">Teaching</span>
+          </div>
+          <a href="" className="link">Read about my experience
+            <svg width="37" height="17" viewBox="0 0 37 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fillRule="evenodd" clipRule="evenodd" d="M27.5377 1.1906L28.1347 2.63918C29.0998 4.98087 30.8573 6.86515 33.0501 8.0001L0 8.0001V9.0001L33.05 9.0001C30.8572 10.135 29.0998 12.0193 28.1347 14.361L27.5377 15.8096L28.4623 16.1906L29.0593 14.742C30.287 11.763 32.9311 9.60166 36.0948 8.99103V8.00915C32.9311 7.39852 30.287 5.23713 29.0593 2.25815L28.4623 0.80957L27.5377 1.1906Z" fill="#EBFF00"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div className="text-[4vw] whitespace-nowrap leading-normal hscroll mt-80 relative  ">
+        {[1, 2, 3, 4, 5, 6, 7].map(i => (
+          <div data-scroll-horizontal data-speed={i % 2 === 0 ? -0.25 : 0.25} className={`opacity-60 ${i % 2 === 0 ? '-ml-40' : '-mr-40'}`} key={i}>
+            <span className="font-Demo1">Experience is key.</span> <span> Get in touch.</span>
+            <span className="font-Demo1">Experience is key.</span> <span> Get in touch.</span>
+            <span className="font-Demo1">Experience is key.</span> <span> Get in touch.</span>
+            <span className="font-Demo1">Experience is key.</span> <span> Get in touch.</span>
+            <span className="font-Demo1">Experience is key.</span> <span> Get in touch.</span>
+            <span className="font-Demo1">Experience is key.</span> <span> Get in touch.</span>
+            <span className="font-Demo1">Experience is key.</span> <span> Get in touch.</span>
+          </div>
+        ))}
+        <div className="absolute w-44 h-44 bg-[#e1ff00] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full text-neutral-900 text-base font-medium grid items-center text-center hover:scale-110 hover:-rotate-12 duration-300">
+          EMAIL ME
+        </div>
+      </div>
+    </div>
+
+    <div className="h-screen bottom-0 sticky bg-[#1b1b1b] flex items-center flex-col justify-center ">
+
+      <span className="text-[8vw] uppercase font-Demo1">
+        Have an idea?
+      </span>
+      <a href="" className="flex items-center gap-4 text-[#e1ff00] duration-1000 hover:gap-8 font-medium text-3xl">Hire Me
+        <svg width="37" height="17" viewBox="0 0 37 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fillRule="evenodd" clipRule="evenodd" d="M27.5377 1.1906L28.1347 2.63918C29.0998 4.98087 30.8573 6.86515 33.0501 8.0001L0 8.0001V9.0001L33.05 9.0001C30.8572 10.135 29.0998 12.0193 28.1347 14.361L27.5377 15.8096L28.4623 16.1906L29.0593 14.742C30.287 11.763 32.9311 9.60166 36.0948 8.99103V8.00915C32.9311 7.39852 30.287 5.23713 29.0593 2.25815L28.4623 0.80957L27.5377 1.1906Z" fill="#EBFF00"></path>
+        </svg>
+      </a>
+
+      <div className="flex bottom-0 py-14 w-full px-20 absolute">
+        <div className="opacity-75">
+          &copy; Ala Chebbi 2022
+        </div>
+        <div className="ml-auto flex gap-2">
+          <a href="" className="w-[50px] border-[#3b3b3b] h-[50px] border rounded-full grid place-items-center text-lg hover:bg-[#3b3b3b] duration-300"><FaLinkedinIn /></a>
+          <a href="" className="w-[50px] border-[#3b3b3b] h-[50px] border rounded-full grid place-items-center text-lg hover:bg-[#3b3b3b] duration-300"><FaGithub /></a>
+        </div>
+      </div>
+
+      <div className="flex top-20 py-14 w-full px-20 absolute">
+        <div className="flex gap-6">
+          <a href="" className="ml-auto  text-white/95 hover:text-white/75 duration-300 font-medium">Home</a>
+          <a href="" className="ml-auto  text-white/95 hover:text-white/75 duration-300 font-medium">Work</a>
+          <a href="" className="ml-auto  text-white/95 hover:text-white/75 duration-300 font-medium">About</a>
+        </div>
+        <a href="" className="ml-auto border-b pb-2 text-white/95 hover:text-white/75 duration-300 font-medium">Send me an email</a>
+      </div>
+    </div>
+
+    <button className="fixed rounded-full hover:bg-[#3b3b3b] duration-300 backdrop-blur-md z-50 right-8 top-8 w-[70px] h-[70px] flex items-center justify-center gap-2 flex-col">
+      <div className="w-6 h-0.5 bg-white"></div>
+      <div className="w-6 h-0.5 bg-white"></div>
+    </button>
+
+    <div className="w-4 h-4 border border-[#e1ff00] fixed top-0 left-0 z-50 rounded-full -mt-2 -ml-2 cursor"></div>
+
+  </main>
+}
