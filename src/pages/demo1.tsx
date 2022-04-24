@@ -59,6 +59,7 @@ export default function Home() {
   const [loaded, setLoaded] = useState(false)
   const [mounted, setMounted] = useState(false)
   const [setup, setSetup] = useState(false)
+  const [cursorText, setCursorText] = useState('')
 
   useEffect(() => {
 
@@ -331,6 +332,115 @@ export default function Home() {
 
   }, [menuOpen])
 
+
+  useEffect(() => {
+
+    document.querySelectorAll('[data-text]').forEach((element) => {
+      const el = element as HTMLElement;
+      const text = el.dataset.text as string;
+      el.addEventListener('mouseenter', (e) => {
+        setCursorText(text)
+      })
+      el.addEventListener('mouseleave', (e) => {
+        setCursorText('')
+      })
+    })
+
+    return () => {
+      document.querySelectorAll('[data-text]').forEach((element) => {
+        const el = element as HTMLElement;
+        const text = el.dataset.text as string;
+        el.removeEventListener('mouseenter', (e) => {
+          setCursorText(text)
+        })
+        el.removeEventListener('mouseleave', (e) => {
+          setCursorText('')
+        })
+      })
+    }
+
+  }, [])
+
+
+  useEffect(() => {
+
+    document.querySelectorAll('a:not([data-ignore]),button:not([data-ignore])').forEach((element) => {
+      const el = element as HTMLElement;
+      el.addEventListener('mouseenter', (e) => {
+        gsap.to('.cursor', {
+          width: 32,
+          height: 32,
+          marginLeft: -16,
+          marginTop: -16,
+          backgroundColor: '#e1ff0088',
+          borderWidth: 0,
+        })
+      })
+      el.addEventListener('mouseleave', (e) => {
+        gsap.to('.cursor', {
+          width: 16,
+          height: 16,
+          marginLeft: -8,
+          marginTop: -8,
+          backgroundColor: '#e1ff0000',
+          borderWidth: 1,
+        })
+      })
+    })
+
+    return () => {
+      document.querySelectorAll('a:not([data-ignore]),button:not([data-ignore])').forEach((element) => {
+        const el = element as HTMLElement;
+        el.removeEventListener('mouseenter', (e) => {
+          gsap.to('.cursor', {
+            width: 32,
+            height: 32,
+            marginLeft: -16,
+            marginTop: -16,
+            backgroundColor: '#e1ff0088',
+            borderWidth: 0,
+          })
+        })
+        el.removeEventListener('mouseleave', (e) => {
+          gsap.to('.cursor', {
+            width: 16,
+            height: 16,
+            marginLeft: -8,
+            marginTop: -8,
+            backgroundColor: '#e1ff0000',
+            borderWidth: 1,
+
+          })
+        })
+      })
+    }
+
+  }, [])
+
+  useEffect(() => {
+    if (cursorText === '') {
+
+      gsap.to('.cursor', {
+        width: 16,
+        height: 16,
+        marginLeft: -8,
+        marginTop: -8,
+        backgroundColor: '#e1ff0000',
+      })
+      return;
+    }
+
+    gsap.to('.cursor', {
+      width: 96,
+      height: 96,
+      marginLeft: -48,
+      marginTop: -48,
+      backgroundColor: '#e1ff00',
+    })
+
+
+  }, [cursorText])
+
   return <main className="min-h-screen  text-[#dfd3c3] overflow-x-clip font-Zen relative">
     <Head>
       <title>GSAP Demo1</title>
@@ -353,12 +463,12 @@ export default function Home() {
           </h1>
         </div>
         <div className="">
-          <div className="relative h-[70vw] w-[65vw] mx-auto bg-[#e1ff00] tokyo">
+          <a href="https://unsplash.com/photos/tKCd-IWc4gI" rel='noopener noreferrer nofollow' target={'_blank'} className="relative h-[70vw] w-[65vw] mx-auto bg-[#e1ff00] tokyo block cursor-none" data-text='Unsplash'>
             <img src="/Demo1/tokyo.jpg" className="object-cover w-full h-full" alt="" />
             <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent to-neutral-900 via-transparent"></div>
             <div className="absolute inset-0 pointer-events-none bg-[#e1ff00] tokyo-cover"></div>
             <div className="absolute bottom-0 right-0 w-40 h-40 translate-x-1/2 translate-y-1/2 3xl:w-64 3xl:h-64"><img src="/Demo1/circletext.svg" className="absolute w-full h-full " data-rotate data-speed="-1" alt="" /></div>
-          </div>
+          </a>
         </div>
       </div>
       <div className="max-w-screen-xl px-20 pt-48 mx-auto 3xl:max-w-screen-2xl">
@@ -374,9 +484,9 @@ export default function Home() {
       </div>
       <div className="px-20 pt-64 mt-64 text-white featured">
         <h2 data-scroll data-speed='0.25' className="w-fit font-Demo1 mx-auto text-[7vw]">FEATURED</h2>
-        <Swiper className="px-32 -mt-32 demo1-slider" slidesPerView={2} spaceBetween={20} >
+        <Swiper className="px-32 -mt-32 demo1-slider cursor-none" slidesPerView={2} spaceBetween={20} data-text='DRAG' >
           <SwiperSlide >
-            <a className="cursor-not-allowed group">
+            <a className="cursor-not-allowed group " data-ignore>
               <div className="relative w-full overflow-hidden aspect-video">
                 <img src="/Demo1/P1.png" className="absolute w-full duration-500 hover:scale-110" alt="Project1" />
                 <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent to-neutral-900 via-transparent"></div>
@@ -390,7 +500,7 @@ export default function Home() {
           </SwiperSlide>
 
           <SwiperSlide >
-            <a className="cursor-not-allowed group">
+            <a className="cursor-not-allowed group" data-ignore>
               <div className="relative w-full overflow-hidden aspect-video">
                 <img src="/Demo1/P1.png" className="absolute w-full duration-500 hover:scale-110" alt="Project1" />
                 <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent to-neutral-900 via-transparent"></div>
@@ -404,7 +514,7 @@ export default function Home() {
           </SwiperSlide>
 
           <SwiperSlide >
-            <a className="cursor-not-allowed group">
+            <a className="cursor-not-allowed group" data-ignore>
               <div className="relative w-full overflow-hidden aspect-video">
                 <img src="/Demo1/P1.png" className="absolute w-full duration-500 hover:scale-110" alt="Project1" />
                 <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent to-neutral-900 via-transparent"></div>
@@ -524,7 +634,10 @@ export default function Home() {
       <div className="w-6 h-0.5 bg-white"></div>
     </button>
 
-    <div className="w-4 h-4 border border-[#e1ff00] fixed top-0 left-0 z-[999] rounded-full -mt-2 -ml-2 cursor pointer-events-none"></div>
+    <div className="w-4 h-4 border border-[#e1ff00] fixed top-0 left-0 z-[999] rounded-full -mt-2 -ml-2 cursor pointer-events-none">
+      <span className="absolute inset-0 grid text-sm font-semibold uppercase place-items-center text-neutral-900">{cursorText}</span>
+    </div>
+
 
     <div className="fixed bg-[#1b1b1b] inset-0 z-[99] menu overflow-hidden">
 
