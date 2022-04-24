@@ -78,11 +78,11 @@ export default function Home() {
     gsap.set('.tokyo-cover', {
       maxHeight: '100%',
     })
-    
+
     gsap.set('.menu', {
       maxHeight: 0,
     })
-    
+
     gsap.set('.welcome1', {
       opacity: 0,
       y: 40,
@@ -92,7 +92,7 @@ export default function Home() {
       opacity: 1,
       y: 0,
       delay: 0.1,
-      duration:0.5
+      duration: 0.5
     })
 
     gsap.set('.welcome1', {
@@ -274,7 +274,7 @@ export default function Home() {
     gsap.to('.tokyo-cover', {
       maxHeight: 0,
       duration: 1,
-      delay:0.5,
+      delay: 0.5,
       ease: 'power2.out'
     })
 
@@ -364,7 +364,7 @@ export default function Home() {
       <div className="max-w-screen-xl px-20 pt-48 mx-auto 3xl:max-w-screen-2xl">
         <h2 className="text-4xl 3xl:text-5xl">Hi I&apos;m Ala. I&apos;m a front-end developer from Sousse, Tunisia.</h2>
         <div className="max-w-xl mt-20 ml-auto ">
-          <p className="text-xl font-light leading-relaxed 3xl:text-3xl">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia fuga velit repellat? Laboriosam sed, autem quae rerum commodi voluptate ab dolorem ipsum, aperiam consequuntur blanditiis, debitis deserunt quas. Alias vero velit consequatur?</p>
+          <p className="text-xl font-light leading-relaxed 3xl:text-3xl">I'm Ala, a passionate programmer, gamer, artist and UI aspiring designer. I currently work fulltime as a fullstack web and mobile developer at <a rel="noopener noreferrer nofollow" target={'_blank'} href='https://brandbox.tn' className="text-[#e1ff00] font-medium hover:opacity-75 duration-300 hover:underline">Brandbox</a>, and  part-time as a Freelancer on <a rel="noopener noreferrer nofollow" target={'_blank'} className="text-[#e1ff00] hover:opacity-75 duration-300 hover:underline font-medium" href="https://www.upwork.com/fl/~01698fa69afe592014">Upwork</a>.</p>
           <a className="link">Get to know me
             <svg width="37" height="17" viewBox="0 0 37 17" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fillRule="evenodd" clipRule="evenodd" d="M27.5377 1.1906L28.1347 2.63918C29.0998 4.98087 30.8573 6.86515 33.0501 8.0001L0 8.0001V9.0001L33.05 9.0001C30.8572 10.135 29.0998 12.0193 28.1347 14.361L27.5377 15.8096L28.4623 16.1906L29.0593 14.742C30.287 11.763 32.9311 9.60166 36.0948 8.99103V8.00915C32.9311 7.39852 30.287 5.23713 29.0593 2.25815L28.4623 0.80957L27.5377 1.1906Z" fill="#EBFF00"></path>
