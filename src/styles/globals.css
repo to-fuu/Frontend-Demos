@@ -16,5 +16,6 @@
 }
 
 .link{
-  @apply flex items-center gap-4 text-[#e1ff00] mt-8 duration-1000 hover:gap-8 text-base font-medium 3xl:text-2xl
+  @apply flex items-center gap-4 text-[#e1ff00] mt-8 duration-1000 hover:gap-8 text-base font-medium 3xl:text-2xl cursor-not-allowed  
 }
+
