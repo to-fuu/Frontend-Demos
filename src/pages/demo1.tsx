@@ -189,11 +189,11 @@ export default function Home() {
       yPercent: 100
     })
 
-    document.querySelector('.menu__link')!.addEventListener('mouseover', (e) => {
+    document.querySelector('.menu__link')?.addEventListener('mouseover', (e) => {
       handleMenuItemEnter(e)
     })
 
-    document.querySelector('.menu__link')!.addEventListener('mouseleave', (e) => {
+    document.querySelector('.menu__link')?.addEventListener('mouseleave', (e) => {
       handleMenuItemExit(e)
 
     })
@@ -298,11 +298,11 @@ export default function Home() {
     return () => {
 
 
-      document.querySelector('.menu__link')!.removeEventListener('mouseover', (e) => {
+      document.querySelector('.menu__link')?.removeEventListener('mouseover', (e) => {
         handleMenuItemEnter(e)
       })
 
-      document.querySelector('.menu__link')!.removeEventListener('mouseleave', (e) => {
+      document.querySelector('.menu__link')?.removeEventListener('mouseleave', (e) => {
         handleMenuItemExit(e)
 
       })
