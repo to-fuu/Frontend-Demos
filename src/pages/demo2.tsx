@@ -152,7 +152,7 @@ export default function Home() {
 
     <div className="flex min-h-screen overflow-hidden">
       <div className="relative flex" style={{ width: '25%' }}>
-        <img src="/Demo2/sandals.jpg" className="object-cover w-2/3 my-auto  h-[75%] object-right sandal" alt="" />
+        <img src="/Demo2/sandals.webp" className="object-cover w-2/3 my-auto  h-[75%] object-right sandal" alt="" />
       </div>
       <div className="z-10 flex flex-col justify-center pt-32 pb-10 " style={{ width: '30%' }}>
         <div className="flex flex-col justify-around h-full -mr-40">
@@ -181,7 +181,7 @@ export default function Home() {
 
       </div>
       <div className="relative" style={{ width: '45%' }}>
-        <img src="/Demo2/shoe.jpg" className="absolute inset-0 object-cover w-full h-full shoe" alt="" />
+        <img src="/Demo2/shoe.webp" className="absolute inset-0 object-cover w-full h-full shoe" alt="" />
         <div className="absolute left-0 w-48 h-48 -translate-x-1/2 bg-white rounded-full bottom-[20%] circle" style={{ backgroundColor: circleColor }}>
           <img src="/Demo2/circletext.svg" className="absolute w-full h-full " data-rotate data-speed="-1" alt="" />
         </div>
