@@ -28,6 +28,9 @@ module.exports = {
       fontFamily: {
         Demo1: ['Demo1', ...fontFamily.sans],
         Zen: ["'Zen Kaku Gothic New'", ...fontFamily.sans],
+        PlayfairSC: ["'Playfair Display SC'", ...fontFamily.sans],
+        Playfair: ["'Playfair Display'", ...fontFamily.sans],
+        DM: ["'DM Serif Display'", ...fontFamily.sans],
       }
     },
   },
