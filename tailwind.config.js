@@ -31,6 +31,18 @@ module.exports = {
         PlayfairSC: ["'Playfair Display SC'", ...fontFamily.sans],
         Playfair: ["'Playfair Display'", ...fontFamily.sans],
         DM: ["'DM Serif Display'", ...fontFamily.sans],
+        Poppins: ['Poppins', ...fontFamily.sans],
+
+      },
+      colors:{
+        'BlackBlue':'#05060a',
+        'Red':'#fe2c54',
+        'Purple':'#3e82fc',
+        'Yellow':'#f4b600',
+        'GrayBlue':'#5d616f',
+        'HardPurple':'#3268ca',
+        'LightPurple':'#ecf3ff',
+
       }
     },
   },
